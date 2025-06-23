@@ -1,0 +1,33 @@
+.LogoPrincipal{
+    position: absolute;
+    top: 300px;
+    left: 550px ;
+    width: 600px;
+    border-radius: 50%;
+    opacity: 20%;
+}
+
+.NomePrincipal{
+    position: absolute;
+    color: white;
+    top: 55px;
+    left: 590px;
+}
+
+@media (max-width: 768px) {
+  .NomePrincipal {
+    position: absolute;
+    color: white;
+    top: 75px;
+    left: 25%;
+    font-size: 30px;
+  }
+  .LogoPrincipal{
+    position: absolute;
+    top: 90px;
+    right: 30px ;
+    width: 50px;
+    border-radius: 50%;
+    opacity: 100%;
+}
+}
