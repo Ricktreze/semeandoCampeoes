@@ -1,28 +1,19 @@
+*{
+    box-sizing: inherit;
+}
+
 .FaBars{
-    position: fixed;
+    position: relative;
     width: 100px;
     height: 50px;
-    left: 0px;
-    top: 100px;
     background: rgb(56, 53, 53);
     color: white;
     cursor: pointer;
+    margin: auto;
 
 }
 
- @media (max-width: 768px) {
-.FaBars{
-    top: 90px;
-}
-.principal{
-    display: flex;
-    margin-top: 400px;
-    box-sizing: border-box;
-    padding: 10%;
-}
-}
-
-.principal{
- width: 80%;
- margin-left: 10%;
+.divMenuLateral{
+    width: 100%;
+    
 }

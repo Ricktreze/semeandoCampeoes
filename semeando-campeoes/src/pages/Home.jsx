@@ -1,11 +1,9 @@
 import {HomeStyles} from '../styles/pages/Home.styles.jsx'
 function Home({sidebar}){
    return(
-    <HomeStyles sidebar={sidebar}>
-       
+    <HomeStyles sidebar={sidebar}>       
         <h1>Fundação - 2018</h1>
-        <p>
-        O Projeto Semeando Campeões (PSC) nasceu de uma parceria com o projeto social de Jiu-Jitsu da 
+        <p>O Projeto Semeando Campeões (PSC) nasceu de uma parceria com o projeto social de Jiu-Jitsu da 
         IV Igreja Presbiteriana Renovada (IV IPR) de Campo Mourão em 2018. Nesse mesmo ano, o PSC começou a apoiar o
         recém-criado Projeto Social Brothers de Jiu-Jitsu em Iretama. Em 18 de março de 2019, com o objetivo de 
         oferecer aulas de Jiu-Jitsu e defesa pessoal para crianças da comunidade, o PSC se desvinculou da IV IPR e

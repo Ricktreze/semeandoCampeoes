@@ -1,10 +1,15 @@
 import {HomeStyles} from '../styles/pages/Home.styles.jsx'
+import Funcionalidades from './ComponentesDePagina/Funcionalidades.jsx'
+
 function Configuracoes({sidebar}){
    return(
-    <HomeStyles sidebar={sidebar}>
-        <h1>Home page teste</h1>
-        <p>Essa pagina será acessada apenas por administradores, poderá ser cadastrado novo atleta e novos horários</p>
-    </HomeStyles>
+    
+    <>
+        <HomeStyles sidebar={sidebar}>
+            <Funcionalidades  sidebar={sidebar}/>
+        </HomeStyles>
+
+    </>
    )
 }
 export default Configuracoes

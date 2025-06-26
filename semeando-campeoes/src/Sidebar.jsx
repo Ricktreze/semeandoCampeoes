@@ -34,7 +34,7 @@ const Sidebar = ({ active }) => {
         <Link to="/Voluntarios"><SidebarItem Icon={FaRegCalendarAlt} Text="Voluntários" /></Link>
         <Link to="/Conquistas"><SidebarItem Icon={FaRegCalendarAlt} Text="Conquistas" /></Link>
         <Link to="/Login"><SidebarItem Icon={FaRegCalendarAlt} Text="Login" /></Link>
-        <Link to="/Configuracoes"><SidebarItem Icon={FaRegCalendarAlt} Text="Configurações" /></Link>
+        <Link to="/Configuracoes/"><SidebarItem Icon={FaRegCalendarAlt} Text="Configurações" /></Link>
       </Content>
     </Container>
   )

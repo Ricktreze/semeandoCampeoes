@@ -2,14 +2,11 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   background-color:rgb(56, 53, 53);
-  position: fixed;
-  height: 100%;
+  position: absolute;
   top: 170px;
-  left: 0px;
   width: 300px;
-  display: 'none';
-  left: ${props => props.sidebar ? '0' : '-100%'};
   animation: showSidebar .4s;
+  overflow:hidden;
 
   @media (max-width: 768px) {
   width: 300px;
@@ -17,12 +14,11 @@ export const Container = styled.div`
 }
 
   > svg {
-    position: fixed;
+    margin-left: 30px;
     color: white;
     width: 30px;
     height: 30px;
     margin-top: 30px;
-    margin-left: 32px;
     cursor: pointer;
   }
 

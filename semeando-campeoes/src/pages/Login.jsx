@@ -1,19 +1,20 @@
-import {HomeStyles} from '../styles/pages/Home.styles.jsx'
+import {LoginStyles} from '../styles/pages/Home.styles.jsx'
+import '../styles/Login.css'
 function Login({sidebar}){
    return(
-    <HomeStyles sidebar={sidebar}>
+    <LoginStyles sidebar={sidebar}>
        <>
         <div className="DivContainer">         
-          <form>
-            <label name="usuario"> Usuário</label>
-            <input name="entrada" type='text' className='Entrada'></input>
-            <label name="senha"> Senha</label>
-            <input name="senha" type='password' className='Entrada'></input>
+          <form action={"http://localhost:3020/api/systemUsers"} method='get'>
+            <label name="loginName"> Usuário</label>
+            <input name="loginName" type='text' className='Entrada'></input>
+            <label name="loginPassword"> Senha</label>
+            <input name="loginPassword" type='password' className='Entrada'></input>
             <button type='submit'>Entrar</button>
           </form>  
       </div>
        </>
-    </HomeStyles>
+    </LoginStyles>
    )
 }
 export default Login

@@ -1,34 +1,42 @@
-.DivContainer{
-   display: flex;
-   justify-content: space-between;
-   position: absolute;
-   left: 65%;
-   width: 30%;
-   height: 65px;
-   padding-top: 20px;
-   margin-top: 5Ppx;
-   color: white;
-   
-   
+.DivContainer{ 
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+
+}
+button{
+    border-radius: 10px;
+    width: 600px;
+    height: 60px;
+    background: rgb(56, 53, 53);
+    font-size:  large;
+    color: white;
+
 }
 
 form{
-    display: flex;
+    margin-left: 450px;
+    display: flex; 
+    flex-direction: column; /* Define a direção como coluna */
+    align-items: flex-start; /* Alinha os itens à esquerda */
 }
 
-button{
-    display: absolute;
-    margin-left: 5px;
-    border-radius: 10px;
-    justify-content: space-between;
-    position: absolute;
-    left: 90%;
-    width: 100px;
-    height: 55px;
-    }
-
 input{
-    margin-left: 5px;
+    margin-bottom: 10px; /* Espaço entre os inputs e o botão */
     border-radius: 10px;
-    height: 30px;
+    height: 50px;
+    width: 600px;
+    background: rgb(255, 255, 255);
+    color: rgb(12, 11, 11);
+    font-size:  large;    
+}
+
+ @media (max-width: 768px) {
+    form{
+    margin-left: 0px;
+    display: flex; 
+    flex-direction: column; /* Define a direção como coluna */
+    align-items: flex-start; /* Alinha os itens à esquerda */
+}
 }

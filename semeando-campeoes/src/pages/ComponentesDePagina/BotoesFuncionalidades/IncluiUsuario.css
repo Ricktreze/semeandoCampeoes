@@ -1,0 +1,20 @@
+.IncluirUsuarioButton{
+    width: 200px;
+    height: 50px;
+    background-color: rgb(56, 53, 53);
+    cursor: pointer;
+}
+
+.IncluirUsuarioButton:hover {
+    background-color: rgb(125, 123, 145);
+    color: rgb(251, 251, 253);
+}
+
+.divIncluiUsuario{
+    width: 100%;
+
+}
+.divIncluiUsuario001{
+    /* background: red; */
+    /* opacity: 50%; */
+}

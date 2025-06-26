@@ -1,0 +1,15 @@
+
+label{
+    width: 200px;
+    height: 20px;
+    color: black;
+}
+form{
+    display: flex;
+    position: fixed;
+    left: 6%;
+
+}
+button{
+    cursor: pointer;
+}

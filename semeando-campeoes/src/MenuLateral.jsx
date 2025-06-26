@@ -11,12 +11,14 @@ import Voluntarios from './pages/Voluntarios';
 import Login from './pages/Login';
 import Conquistas from './pages/Conquistas';
 import Configuracoes from './pages/Configuracoes';
+import IncluiUsuarioForm from './pages/ComponentesDePagina/FomulariosFuncionalidades/IncluiUsuarioForm'
 
 function MenuLateral(){
 const [sidebar, setSidebar] = useState(false)
 const showSideBar = () => setSidebar(!sidebar)
     return(
-    <div className='principal'>
+    <div className='divMenuLateral'>
+       <FaBars className='FaBars' onClick={showSideBar} />
         <Routes>
         <Route path="/" element={<Home sidebar={sidebar}/>} /> 
         <Route path="/HorariosTreinos" element={<HorariosTreinos sidebar={sidebar}/>} />
@@ -25,13 +27,16 @@ const showSideBar = () => setSidebar(!sidebar)
         <Route path="/Voluntarios" element={<Voluntarios sidebar={sidebar}/>} />
         <Route path="/Conquistas" element={<Conquistas sidebar={sidebar}/>} />
         <Route path="/Login" element={<Login sidebar={sidebar}/>} />
-        <Route path="/Configuracoes" element={<Configuracoes sidebar={sidebar}/>} /> */
+        <Route path="/Configuracoes/*" element={<Configuracoes sidebar={sidebar}/>} /> 
+        <Route path="/IncluiUsuarioForm" element={<IncluiUsuarioForm sidebar={sidebar}/>} /> 
+
         </Routes>
-        <FaBars className='FaBars' onClick={showSideBar} />
+        
+      
         {sidebar && <Sidebar active={setSidebar} />}
-       
     </div>
     )
 }
+
 
 export default MenuLateral 

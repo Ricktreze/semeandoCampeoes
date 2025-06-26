@@ -3,9 +3,9 @@ import './styles/Marca.css'
 
 function Marca(){
     return(
-       <>
-            <img className="LogoPrincipal" src={LogoImg} />
-            <h1 className="NomePrincipal">Semeando Campeões</h1>
+       <>    
+        <h1 className="NomePrincipal">Semeando Campeões</h1>
+        <img className="LogoPrincipal" src={LogoImg} />
        </>
          
     )
