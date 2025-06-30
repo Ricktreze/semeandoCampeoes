@@ -106,7 +106,6 @@ function IncluiUsuarioForm(sidebar) {
 
     return (
         <div>
-            <h1>Teste</h1>
             <form className="IncluiUsuarioForm" >
 
                 <label>Nome Completo</label>

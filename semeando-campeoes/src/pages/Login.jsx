@@ -4,12 +4,11 @@ import '../styles/Login.css'
 import { useState } from 'react'
 import fn from '../fn.jsx'
 function Login({ sidebar }) {
-   const [loginResponse, setLoginResponse] = useState(null)
-   const [loginName, setLoginName] = useState()
-   const [loginPassword, setLoginPassword] = useState()
+   const [usuarioLogado, setUsuarioLogado] = useState(localStorage.getItem('aut'))
+   const [loginName, setLoginName] = useState("")
+   const [loginPassword, setLoginPassword] = useState("")
    const atualizaLoginName = (event) => {
-   setLoginName(event.target.value)
-
+      setLoginName(event.target.value)
    }
    const atualizaLoginPassword = (event) => setLoginPassword(event.target.value)
 
@@ -19,8 +18,8 @@ function Login({ sidebar }) {
          loginName: loginName,
          loginPassword: loginPassword
       }
-      // valida e atualiza variavel de controle de login aut no storage procedure
-      fn.validaStamp(objValidaLogin)
+      // valida e atualiza variavel de controle de login aut no storage
+      fn.validaStamp(objValidaLogin, setUsuarioLogado)
       setLoginName("")
       setLoginPassword("") 
    }

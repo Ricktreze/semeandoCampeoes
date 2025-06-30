@@ -8,6 +8,7 @@ export const Container = styled.div`
   padding: 10px;
   border-radius: 10px;
   margin: 0 15px 20px;
+  text-decoration: none;
 
   > svg {
     margin: 0 20px;

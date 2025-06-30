@@ -4,13 +4,13 @@ import BarraSuperior from './BarraSuperior'
 import Marca from "./Marca"
 import MenuLateral from './MenuLateral'
 import UsuarioLogadoScreen from './UsuarioLogadoScreen.jsx'
+import fn from './fn.jsx'
 
 
 function App() {
-   localStorage.setItem('side', false);
+
   return (   
-      <>
-              
+      <>              
         <BarraSuperior />
         <div className="divMesmoNivel">
             <MenuLateral />

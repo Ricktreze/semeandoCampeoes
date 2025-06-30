@@ -40,7 +40,7 @@ const Sidebar = ({ active, sidebar }) => {
           active(false)
           localStorage.setItem('side', false);
           window.location.reload()
-          contador = 0 
+          contador = -1 
     }else if(contador === 0){ // atualizo a pagina que estou na primeira execução frescurenta do useEffect()
         controleDePagina = event.view.location.pathname
     }else if ( contador > 2 && localStorage.getItem('side') && event.view.location.pathname != controleDePagina ){

@@ -2,19 +2,15 @@ import axios from 'axios';
 
 function fn() {}
 
-function atualizaStamp(objUsuario,stampLogin ) {
-    const objStampAtualiza = {
-        _id: objUsuario._id,
-        stampLogin: objUsuario.stampLogin
-    }
+function atualizaStamp(objStampAtualiza ) {
+   
     const responseStamp = axios.put('http://localhost:3020/api/appUsers', objStampAtualiza)
 
-    localStorage.setItem('usr', objUsuario.userName);
     if (responseStamp) {
-        alert('Usuario atualizado');
+        // alert('Usuario atualizado');
         //refresh na pagina
         localStorage.setItem('aut', "true");
-        window.location.reload()
+        // window.location.reload()
     } else {
         localStorage.setItem('aut', "false");
         alert('Erro na atualização de usuario.');
@@ -30,13 +26,18 @@ function validaStamp(objValidaLogin) {
             // alert("JSON.parse(result).data[0].userName"+JSON.parse(result).data[0].userName)
             if (result ){
                 if (JSON.parse(result).data[0]) {
-
-                localStorage.setItem('aut', "false");
-                atualizaStamp(JSON.parse(result).data[0], Date.now() )
-                // alert('Usuário logado com sucesso');
-        
+                    localStorage.setItem('usr', JSON.parse(result).data[0].userName);
+                    localStorage.setItem('aut', "true");
+                     const objStampAtualiza = {
+                        _id: JSON.parse(result).data[0]._id,
+                        stampLogin:  Date.now()
+                    }
+                    atualizaStamp(objStampAtualiza)
+                    alert('Usuário logado com sucesso');
+            
                 } else {
                     localStorage.setItem('aut', "false");
+                    localStorage.setItem('usr', "");
                 // alert('Usuário ou senha inválido' );
                 }
             };

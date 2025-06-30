@@ -1,16 +1,17 @@
 import fn from './fn'
 import './styles/UsuarioLogadoScreen.css'
+import { useState} from 'react'
 
 function UsuarioLogadoScreen(){
-
+const [usuarioLogado, setUsuarioLogado] = useState(localStorage.getItem('aut'))
     const objValidaLogin = {
-         loginName: localStorage.getItem('usr'),
+         userName: localStorage.getItem('usr'),
          stampLogin: {$gte: Date.now()-600000}// a 10 minutos atrás 600000 representa 10 minutoa
       }
       // valida e atualiza variavel de controle de login aut no storage procedure
       // e através dea eu decido se estou logado ou não 
-      fn.validaStamp(objValidaLogin)
-      const usuarioLogado = localStorage.getItem('aut');
+      fn.validaStamp(objValidaLogin, setUsuarioLogado)
+      
    
     return(
         <div className="UsuarioLogadoScreen"> 

@@ -17,6 +17,7 @@ function MenuLateral(){
 //  localStorage.setItem('side', "");
 const [sidebar, setSidebar] = useState(false)
 const showSideBar = () => {
+    console.log("sidebar", sidebar)
     setSidebar(!sidebar)    
 }
 
@@ -33,9 +34,7 @@ const showSideBar = () => {
         <Route path="/Login" element={<Login sidebar={sidebar}/>} />
         <Route path="/Configuracoes/*" element={<Configuracoes sidebar={sidebar}/>} /> 
         <Route path="/IncluiUsuarioForm" element={<IncluiUsuarioForm sidebar={sidebar}/>} /> 
-
-        </Routes>
-        
+        </Routes>      
       
         {sidebar && <Sidebar active={setSidebar} sidebar={!sidebar} />}
     </div>
