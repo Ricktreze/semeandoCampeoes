@@ -1,7 +1,7 @@
 import {HomeStyles} from '../styles/pages/Home.styles.jsx'
 function Home({sidebar}){
    return(
-    <HomeStyles sidebar={sidebar}>       
+    <HomeStyles sidebar={sidebar} id="home">       
         <h1>Fundação - 2018</h1>
         <p>O Projeto Semeando Campeões (PSC) nasceu de uma parceria com o projeto social de Jiu-Jitsu da 
         IV Igreja Presbiteriana Renovada (IV IPR) de Campo Mourão em 2018. Nesse mesmo ano, o PSC começou a apoiar o

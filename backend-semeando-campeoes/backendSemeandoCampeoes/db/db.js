@@ -22,20 +22,20 @@ async function find(entit){
     return await cursor.toArray();
 }
 
-// async function find01(entit, sort, filter, limit = 50){
-//         const db = await connect();
-//         const cursor = db.collection(entit).find(filter).limit(limit).sort(sort);
-//     return await cursor.toArray();
-// }
-// async function remove(id){
-//     const db = await connect();
-//     return db.collection("customers").deleteOne( {_id: new ObjectId(id) })
-// }
+async function find01(entit, sort, filter, limit = 50){
+        const db = await connect();
+        const cursor = db.collection(entit).find(filter).limit(limit).sort(sort);
+    return await cursor.toArray();
+}
+async function remove(id){
+    const db = await connect();
+    return db.collection("customers").deleteOne( {_id: new ObjectId(id) })
+}
 
-// async function update(id, objUpdate, table ){
-//     const db = await connect();
-//     return db.collection(table).updateOne( {_id: new ObjectId(id) }, { $set: objUpdate })
-// }
+async function update(id, objUpdate, table ){
+    const db = await connect();
+    return db.collection(table).updateOne( {_id: new ObjectId(id) }, { $set: objUpdate })
+}
 
 // async function exists(table ){
 //     const db = await connect();
@@ -45,5 +45,7 @@ async function find(entit){
 
 module.exports = {
     insert,
-    find
+    find,
+    find01,
+    update
 }

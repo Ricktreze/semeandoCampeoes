@@ -16,11 +16,7 @@ export const LoginStyles = styled.div`
     height: 100%;
     background: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
-    margin-top: 200px;
-        
-    @media (max-width: 768px) {
-        margin-top: -200px;
-    }
+    margin-top: 200px;      
 }`
 
 export const HorariosTreinoStyle = styled.div`
@@ -32,6 +28,6 @@ export const HorariosTreinoStyle = styled.div`
     margin-top: 400px;
    
     @media (max-width: 768px) {
-         margin-left: 0px};    
+         margin-left: 0px;    
     }
 }`

@@ -6,7 +6,7 @@ export const Container = styled.div`
   top: 170px;
   width: 300px;
   animation: showSidebar .4s;
-  overflow:hidden;
+  
 
   @media (max-width: 768px) {
   width: 300px;

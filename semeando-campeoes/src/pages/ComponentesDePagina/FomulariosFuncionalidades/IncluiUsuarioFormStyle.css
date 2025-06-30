@@ -5,9 +5,9 @@ label{
     color: black;
 }
 form{
-    display: flex;
-    position: fixed;
-    left: 6%;
+    /* display: flex; */
+    position: absolute;
+    /* left: 6%; */
 
 }
 button{

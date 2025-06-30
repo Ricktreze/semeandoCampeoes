@@ -19,9 +19,10 @@ function ListarUsuarios() {
                 <table>
                     <thead>
                         <tr>
-                            <th>Nome</th>
-                            <th>Data de Nnscimento</th>
+                            <th>Nome</th>                           
                             <th>Faixa</th>
+                            <th>CFP</th>
+                            <th>Data de Nnscimento</th>
                             <th>Login</th>
                             <th>Tipo</th>
                             <th>Genero</th>
@@ -30,9 +31,10 @@ function ListarUsuarios() {
                     <tbody>
                         {usuario.map((row, index) => (
                             <tr key={index}>
-                                <td>{row.userName}</td>
-                                <td>{row.userBirthday}</td>
+                                <td>{row.userName}</td>                                
                                 <td>{row.userGraduacao}</td>
+                                <td>{row.userCpf}</td>
+                                <td>{row.userBirthday}</td>
                                 <td>{row.loginName}</td>
                                 <td>{row.typeUser}</td>
                                 <td>{row.userGenero}</td>

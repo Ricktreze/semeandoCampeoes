@@ -1,20 +1,52 @@
-import {LoginStyles} from '../styles/pages/Home.styles.jsx'
+
+import { LoginStyles } from '../styles/pages/Home.styles.jsx'
 import '../styles/Login.css'
-function Login({sidebar}){
-   return(
-    <LoginStyles sidebar={sidebar}>
-       <>
-        <div className="DivContainer">         
-          <form action={"http://localhost:3020/api/systemUsers"} method='get'>
-            <label name="loginName"> Usuário</label>
-            <input name="loginName" type='text' className='Entrada'></input>
-            <label name="loginPassword"> Senha</label>
-            <input name="loginPassword" type='password' className='Entrada'></input>
-            <button type='submit'>Entrar</button>
-          </form>  
-      </div>
-       </>
-    </LoginStyles>
+import { useState } from 'react'
+import fn from '../fn.jsx'
+function Login({ sidebar }) {
+   const [loginResponse, setLoginResponse] = useState(null)
+   const [loginName, setLoginName] = useState()
+   const [loginPassword, setLoginPassword] = useState()
+   const atualizaLoginName = (event) => {
+   setLoginName(event.target.value)
+
+   }
+   const atualizaLoginPassword = (event) => setLoginPassword(event.target.value)
+
+   function validaLogin(event) {
+      event.preventDefault()
+      const objValidaLogin = {
+         loginName: loginName,
+         loginPassword: loginPassword
+      }
+      // valida e atualiza variavel de controle de login aut no storage procedure
+      fn.validaStamp(objValidaLogin)
+      setLoginName("")
+      setLoginPassword("") 
+   }
+   return (
+      <LoginStyles sidebar={sidebar}>
+         <div className="DivContainer">
+            <form>
+               <label name="loginName"> Usuário</label>
+               <input
+                  onChange={atualizaLoginName}
+                  name="loginName"
+                  value={loginName}
+                  type='text'
+                  className='Entrada' />
+
+               <label name="loginPassword"> Senha</label>
+               <input
+                  onChange={atualizaLoginPassword}
+                  name="loginPassword"
+                  value={loginPassword}
+                  type='password'
+                  className='Entrada' />
+               <button type='submit' onClick={validaLogin}>Entrar</button>
+            </form>
+         </div>
+      </LoginStyles>
    )
 }
 export default Login

@@ -14,8 +14,12 @@ import Configuracoes from './pages/Configuracoes';
 import IncluiUsuarioForm from './pages/ComponentesDePagina/FomulariosFuncionalidades/IncluiUsuarioForm'
 
 function MenuLateral(){
+//  localStorage.setItem('side', "");
 const [sidebar, setSidebar] = useState(false)
-const showSideBar = () => setSidebar(!sidebar)
+const showSideBar = () => {
+    setSidebar(!sidebar)    
+}
+
     return(
     <div className='divMenuLateral'>
        <FaBars className='FaBars' onClick={showSideBar} />
@@ -33,7 +37,7 @@ const showSideBar = () => setSidebar(!sidebar)
         </Routes>
         
       
-        {sidebar && <Sidebar active={setSidebar} />}
+        {sidebar && <Sidebar active={setSidebar} sidebar={!sidebar} />}
     </div>
     )
 }
