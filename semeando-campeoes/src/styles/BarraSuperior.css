@@ -6,3 +6,14 @@
     height: 100px;
     box-shadow: 0 0 10px 10px rgba(92, 82, 82, 0.5);
 }
+
+.NomePrincipal{
+    position: absolute;
+    margin: auto;
+    font-size: 300%;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    top: 40%;
+    left: 50% ;
+    transform: translate(-50%, -50%);    
+}

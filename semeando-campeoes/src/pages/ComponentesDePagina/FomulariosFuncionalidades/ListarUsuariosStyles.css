@@ -1,37 +1,37 @@
 table{
-  background-color: rgba(250, 247, 247, 0);
+  background-color: rgb(255, 255, 255);
   width: 800px;
   padding: 8px;
   /* margin: 15px; */
   text-align: center;
   line-height: 20px;
-  border: 2px solid #131111;
+  border: 2px solid #3b27aa;
   border-radius: 5px;
   margin-top: 10px;
   opacity: 100%;
 }
 
 tr{
-  background-color: rgba(185, 17, 17, 0);
+  background-color: rgb(255, 255, 255);
   width: 800px;
   padding: 8px;
-  /* margin: 15px; */
   text-align: center;
   line-height: 20px;
-  border: 2px solid #7d1414;
+  border: 2px solid rgb(56, 53, 53);
   border-radius: 5px;
   margin-top: 10px;
 }
 
 table th {
   text-align: center;
-  background: #d20a0a;
+  background: rgb(38, 18, 221);
+  color: rgb(255, 255, 255);
 }
 
 table td {
-  border: 2px solid #d20a0a;
+  border: 2px solid rgb(56, 53, 53);
 }
 
 table tr:hover{
-  background: #ff65188c;
+  background: #053bec9c;
 }

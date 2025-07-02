@@ -33,7 +33,7 @@ function validaStamp(objValidaLogin) {
                         stampLogin:  Date.now()
                     }
                     atualizaStamp(objStampAtualiza)
-                    alert('Usuário logado com sucesso');
+                    // alert('Usuário logado com sucesso');
             
                 } else {
                     localStorage.setItem('aut', "false");

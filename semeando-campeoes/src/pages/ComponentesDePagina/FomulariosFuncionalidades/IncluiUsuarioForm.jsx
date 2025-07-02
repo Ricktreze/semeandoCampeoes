@@ -1,6 +1,13 @@
 import './IncluiUsuarioFormStyle.css'
 import { useState } from 'react';
 import axios from 'axios';
+import Navegacao from '../NavFuncionalidades/navegacao';
+import { Link } from 'react-router-dom';
+import { BotoesStyles } from '../BotoesFuncionalidades/Botoes.styles.jsx'
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Container from 'react-bootstrap/Container';
 
 function IncluiUsuarioForm(sidebar) {
     const [userName, setUserName] = useState("");
@@ -85,7 +92,7 @@ function IncluiUsuarioForm(sidebar) {
             loginPassword: loginPassword,
             typeUser: typeUser,
             userGenero: userGenero,
-            stampLogin:""
+            stampLogin: ""
         }
         const response = axios.post('http://localhost:3020/api/appUsers', objIncui)
         if (response) {
@@ -105,73 +112,80 @@ function IncluiUsuarioForm(sidebar) {
     }
 
     return (
-        <div>
-            <form className="IncluiUsuarioForm" >
+        <BotoesStyles sidebar={sidebar}>
 
-                <label>Nome Completo</label>
-                <input
-                    type="text"
-                    id="userName"
-                    value={userName}
-                    onChange={alteraUserName} 
-                    name="userName"
-                />
+            <div id="divIncluiUsuarioForm">
+                <Navegacao />
+                <Link to="/IncluiUsuarioForm">
+                    <button className="IncluirUsuarioButton" type="submit">Incluir Usuário</button>
+                </Link>
+                <form className="IncluiUsuarioForm" >
 
-                <label for="userGraduacao">Faixa</label>
-                <select id="userGraduacao"
-                    name="userGraduacao"
-                    value={userFaixa}
-                    onChange={alteraUserFaixa} >
-                    <option value=""></option>
-                    <option value="branca">Branca</option>
-                    <option value="azul">Azul</option>
-                    <option value="Roxa">Roxa</option>
-                    <option value="Maroom">Marrom</option>
-                    <option value="Preta">Preta</option>
-                </select>
+                    <label>Nome Completo</label>
+                    <input
+                        type="text"
+                        id="userName"
+                        value={userName}
+                        onChange={alteraUserName}
+                        name="userName"
+                    />
 
-                <label>CPF</label>
-                <input type="text"
-                    placeholder="Digite um CPF"
-                    name="userCpf"
-                    value={userCpf}
-                    onChange={alteraUserCpf}
-                />
+                    <label for="userGraduacao">Faixa</label>
+                    <select id="userGraduacao"
+                        name="userGraduacao"
+                        value={userFaixa}
+                        onChange={alteraUserFaixa} >
+                        <option value=""></option>
+                        <option value="branca">Branca</option>
+                        <option value="azul">Azul</option>
+                        <option value="Roxa">Roxa</option>
+                        <option value="Maroom">Marrom</option>
+                        <option value="Preta">Preta</option>
+                    </select>
 
-                <label>Data de nascimento</label>
-                <input
-                    value={userBirthday}
-                    placeholder="dia/mês/ano"
-                    onChange={alteraUserBirthday} />
+                    <label>CPF</label>
+                    <input type="text"
+                        placeholder="Digite um CPF"
+                        name="userCpf"
+                        value={userCpf}
+                        onChange={alteraUserCpf}
+                    />
 
-                <label>Apelido para login</label>
-                <input
-                    type="text"
-                    name="loginName"
-                    value={loginName}
-                    onChange={alteraLoginName} />
+                    <label>Data de nascimento</label>
+                    <input
+                        value={userBirthday}
+                        placeholder="dia/mês/ano"
+                        onChange={alteraUserBirthday} />
 
-                <label>Senha inicial</label>
-                <input type="password" name="loginPassword" value={loginPassword} onChange={alteraLoginPassword}></input>
+                    <label>Apelido para login</label>
+                    <input
+                        type="text"
+                        name="loginName"
+                        value={loginName}
+                        onChange={alteraLoginName} />
 
-                <label for="typeUser">Tipo</label>
-                <select id="typeUser" name="typeUser" value={typeUser} onChange={alteraTypeUser} >
-                    <option value=""></option>
-                    <option value="professor">Professor</option>
-                    <option value="aluno">Aluno</option>
-                    <option value="voluntario">Voluntário</option>
-                </select>
+                    <label>Senha inicial</label>
+                    <input type="password" name="loginPassword" value={loginPassword} onChange={alteraLoginPassword}></input>
 
-                <label for="userGenero">Genero:</label>
-                <select id="userGenero" name="userGenero" value={userGenero} onChange={alteraUserGener} >
-                    <option value=""></option>
-                    <option value="masculino">Masculino</option>
-                    <option value="feminino">Feminino</option>
-                </select>
+                    <label for="typeUser">Tipo</label>
+                    <select id="typeUser" name="typeUser" value={typeUser} onChange={alteraTypeUser} >
+                        <option value=""></option>
+                        <option value="professor">Professor</option>
+                        <option value="aluno">Aluno</option>
+                        <option value="voluntario">Voluntário</option>
+                    </select>
 
-                <button type='submit' id="cadastrarUsuario" onClick={incluiUsuario}>Entrar</button>
-            </form>
-        </div>
+                    <label for="userGenero">Genero:</label>
+                    <select id="userGenero" name="userGenero" value={userGenero} onChange={alteraUserGener} >
+                        <option value=""></option>
+                        <option value="masculino">Masculino</option>
+                        <option value="feminino">Feminino</option>
+                    </select>
+
+                    <button type='submit' id="cadastrarUsuario" onClick={incluiUsuario}>Entrar</button>
+                </form>
+            </div>
+        </BotoesStyles>
     )
 
 }

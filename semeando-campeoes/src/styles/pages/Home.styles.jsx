@@ -16,7 +16,8 @@ export const LoginStyles = styled.div`
     height: 100%;
     background: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
-    margin-top: 200px;      
+    margin-top: 10%;
+    margin-left: -4%;      
 }`
 
 export const HorariosTreinoStyle = styled.div`
@@ -25,6 +26,7 @@ export const HorariosTreinoStyle = styled.div`
     background: rgb(255, 255, 255);
     margin-rigth: "30px";
     color: rgb(0, 0, 0);    
+    margin-left: ${props => props.sidebar ? '310px' : '10px'};
     margin-top: 400px;
    
     @media (max-width: 768px) {

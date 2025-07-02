@@ -3,6 +3,7 @@ import './ListarUsuariosStyles.css'
 
 function ListarUsuarios() {
     const [usuario, setUsuario] = useState(null);
+    const [intervalo, setIntervalo] = useState(1000)
     useEffect(() => {
         const consultUsuario = async () => {
             fetch("http://localhost:3020/api/appUsers")
@@ -11,7 +12,10 @@ function ListarUsuarios() {
                 .catch(error => console.error("Erro ao buscar usuários", error))
         }
         consultUsuario();
-    })
+        setInterval(consultUsuario, intervalo);
+      
+        
+    }, [intervalo]);
 
     if (usuario) {
         return (
@@ -19,7 +23,7 @@ function ListarUsuarios() {
                 <table>
                     <thead>
                         <tr>
-                            <th>Nome</th>                           
+                            <th>Nome</th>
                             <th>Faixa</th>
                             <th>CFP</th>
                             <th>Data de Nnscimento</th>
@@ -31,7 +35,7 @@ function ListarUsuarios() {
                     <tbody>
                         {usuario.map((row, index) => (
                             <tr key={index}>
-                                <td>{row.userName}</td>                                
+                                <td>{row.userName}</td>
                                 <td>{row.userGraduacao}</td>
                                 <td>{row.userCpf}</td>
                                 <td>{row.userBirthday}</td>
@@ -47,9 +51,12 @@ function ListarUsuarios() {
             </div>
         )
     } else {
-        <>
-            <p>Carregando...</p>
-        </>
+        return (
+          
+            <div className="divCllistarUsuario">
+                <p>Carregando...</p>
+            </div>
+        )
     }
 }
 export default ListarUsuarios

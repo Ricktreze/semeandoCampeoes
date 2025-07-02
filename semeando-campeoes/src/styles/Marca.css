@@ -1,25 +1,14 @@
 .LogoPrincipal{
     position: absolute;
-    top: 60%;
+    top: 75%;
     left: 50% ;
     transform: translate(-50%, -50%);
     margin: auto;
-    width: 600px;
+    width: 45%;
     border-radius: 50%;
     opacity: 20%;    
     z-index: -1;
 
-}
-
-.NomePrincipal{
-    position: absolute;
-    margin: auto;
-    font-size: 300%;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    top: 15%;
-    left: 50% ;
-    transform: translate(-50%, -50%);    
 }
 
 @media (max-width: 980px) {
@@ -29,12 +18,12 @@
     font-size: 200%;
     color: rgb(255, 255, 255);
     text-align: center;
-    top: 16%;
+    top: 40%;
     left: 50% ;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);   
     }
     .LogoPrincipal{
-      top: 16.5%;
+      top: 23%;
       left: 93%;
       transform: translate(-50%, -50%);
       width: 80px;
@@ -45,10 +34,3 @@
   }
 }
 
-.divMesmoNivel{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-
-}
